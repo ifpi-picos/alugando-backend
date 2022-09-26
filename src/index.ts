@@ -1,11 +1,13 @@
-import express from 'express'
-const app = express()
-const port = 8000
+import express from 'express';
+import rotas from './rotas/paginaMoveis';
 
-app.get('/', (req, res) => {
-    res.send('hello word Express')
-})
+// criação de uma instância do express/servidor http
+const app = express();
 
-app.listen(port, () => {
-    console.log('servidor iniciado com sucesso')
-})
+app.use(express.json());
+
+// middleware de tratamento de todas as rotas
+app.use('/', rotas);
+
+// inicia o servidor http na porta 3000
+app.listen(3000);
