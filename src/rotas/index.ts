@@ -1,14 +1,16 @@
-import { Router, Request, Response } from 'express';
-import rotasDeUsuarios from './usuarios';
-import rotasDeLogin from './login';
+import { Router } from "express";
+import routerCadastroInquilino from "./cadastroInquilino";
+import routerCadastroLocador from "./cadastroLocador";
+import routerLogin from "./login";
+import routerPaginaAnuncios from "./paginaAnuncios";
 
-const rotas = Router(); 
+const router = Router();
 
-rotas.get('/', (req: Request, res: Response) => {
-  res.send('Ola!');
-});
+router.use('/cadastroInquilino', routerCadastroInquilino);
+router.use('/cadastroLocador', routerCadastroLocador);
+router.use('/login', routerLogin);
+router.use('/paginaAnuncios', routerPaginaAnuncios);
 
-rotas.use('/usuarios', rotasDeUsuarios);
-rotas.use('/login', rotasDeLogin);
 
-export default rotas;
+
+export default router;
