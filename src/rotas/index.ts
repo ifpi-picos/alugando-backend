@@ -1,15 +1,15 @@
 import { Router } from "express";
-import routerCadastroInquilino from "./cadastroInquilino";
-import routerCadastroLocador from "./cadastroLocador";
-import routerLogin from "./login";
-import routerPaginaAnuncios from "./paginaAnuncios";
+import rotasDeInquilinos from "./Inquilinos";
+import rotasDeLocador from "./Locadores";
+import rotasDeLogin from "./login";
+import rotasDePaginaAnuncios from "./Anuncios";
 
 const router = Router();
 
-router.use('/cadastroInquilino', routerCadastroInquilino);
-router.use('/cadastroLocador', routerCadastroLocador);
-router.use('/login', routerLogin);
-router.use('/paginaAnuncios', routerPaginaAnuncios);
+router.use('/inquilinos', rotasDeInquilinos);
+router.use('/locadores', rotasDeLocador);
+router.use('/login', rotasDeLogin);
+router.use('/anuncios', rotasDePaginaAnuncios);
 
 
 

@@ -16,3 +16,21 @@ model Usuario {
   nome  String
   @@map("usuarios")
 }
+model Inquilino {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  nome  String
+  @@map("inquilinos")
+}
+model Locador {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  nome  String
+  @@map("locadores")
+}
+model Anuncios {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  nome  String
+  @@map("anuncios")
+}

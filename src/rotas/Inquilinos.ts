@@ -5,19 +5,20 @@ const rotas = Router();
 const prisma = new PrismaClient();
 
 rotas.get('/', async (req: Request, res: Response) => {
-    res.end("retorno da tela do inquilino")
+  const Inquilinos = await prisma.inquilinos.findMany({});
+  res.json(Inquilinos);
 });
 
 rotas.post('/', async (req: Request, res: Response) => {
   const { nome, email } = req.body;
   try {
-    const usuario = await prisma.usuario.create({
+    const Inquilinos = await prisma.inquilinos.create({
       data: {
         nome,
         email,
       },
     });
-    res.json(usuario);
+    res.json(Inquilinos);
   } catch (erro) {
     res.status(400).send(erro);
   }
