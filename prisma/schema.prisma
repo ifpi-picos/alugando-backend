@@ -50,7 +50,7 @@ model Locador {
 }
 
 
-model Anuncios {
+model Anuncio {
   id    Int     @id @default(autoincrement())
   nome String
   telefone Int
@@ -61,6 +61,5 @@ model Anuncios {
   caractImovel String
   defDePessoas String
   valorImovel Int
-  senha String
   @@map("anuncios")
 }

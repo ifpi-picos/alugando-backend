@@ -4,20 +4,16 @@ import { PrismaClient } from '@prisma/client';
 const rotas = Router();
 const prisma = new PrismaClient();
 
-rotas.get('/', async (req: Request, res: Response) => {
-    res.end("retorno dos Anuncios")
-});
-
 rotas.post('/', async (req: Request, res: Response) => {
-  const { nome, email } = req.body;
+  const { nome,email } = req.body;
   try {
-    const usuario = await prisma.usuario.create({
+    const anuncios = await prisma.anuncios.create({
       data: {
         nome,
         email,
       },
     });
-    res.json(usuario);
+    res.json(anuncios);
   } catch (erro) {
     res.status(400).send(erro);
   }

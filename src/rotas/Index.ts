@@ -1,6 +1,6 @@
 import { Router } from "express";
 import rotasDeInquilinos from "./Inquilino";
-import rotasDeLocador from "./Locadores";
+import rotasDeLocador from "./Locador";
 import rotasDeLogin from "./Login";
 import rotasDePaginaAnuncios from "./Anuncios";
 

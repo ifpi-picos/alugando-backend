@@ -1,5 +1,5 @@
 import express from 'express';
-import rotas from './rotas';
+import rotas from './rotas/Index';
 
 // criação de uma instância do express/servidor http
 const app = express();
