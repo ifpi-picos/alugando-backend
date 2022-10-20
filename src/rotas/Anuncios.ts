@@ -5,7 +5,7 @@ const rotas = Router();
 const prisma = new PrismaClient();
 
 rotas.get('/', async (req: Request, res: Response) => {
-    res.end("retorno da paginaMoveis")
+    res.end("retorno dos Anuncios")
 });
 
 rotas.post('/', async (req: Request, res: Response) => {

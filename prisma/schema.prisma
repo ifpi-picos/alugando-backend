@@ -10,27 +10,57 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Usuario {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  nome  String
-  @@map("usuarios")
-}
+// model Usuario {
+//   id    Int     @id @default(autoincrement())
+//   email String  @unique
+//   nome  String
+//   @@map("usuarios")
+// }
+
 model Inquilino {
   id    Int     @id @default(autoincrement())
-  email String  @unique
   nome  String
+  email String  @unique
+  telefone String
+  idade Int
+  cidade String
+  TipoMoradia String
+  seTrabalha String
+  seEstuda String
+  quantidadePessoas Int
+  senha String
   @@map("inquilinos")
 }
+
 model Locador {
   id    Int     @id @default(autoincrement())
-  email String  @unique
   nome  String
+  email String  @unique
+  telefone Int
+  cidade String
+  bairro String
+  cep Int
+  rua String
+  caractImovel String
+  defDePessoas String
+  valorImovel Int
+  senha String
+
   @@map("locadores")
 }
+
+
 model Anuncios {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  nome  String
+  nome String
+  telefone Int
+  cidade String
+  bairro String
+  cep Int
+  rua String
+  caractImovel String
+  defDePessoas String
+  valorImovel Int
+  senha String
   @@map("anuncios")
 }

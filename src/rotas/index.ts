@@ -1,7 +1,7 @@
 import { Router } from "express";
-import rotasDeInquilinos from "./Inquilinos";
+import rotasDeInquilinos from "./Inquilino";
 import rotasDeLocador from "./Locadores";
-import rotasDeLogin from "./login";
+import rotasDeLogin from "./Login";
 import rotasDePaginaAnuncios from "./Anuncios";
 
 const router = Router();

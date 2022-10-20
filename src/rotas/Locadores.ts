@@ -4,21 +4,16 @@ import { PrismaClient } from '@prisma/client';
 const rotas = Router();
 const prisma = new PrismaClient();
 
-rotas.get('/', async (req: Request, res: Response) => {
-  const Inquilinos = await prisma.inquilinos.findMany({});
-  res.json(Inquilinos);
-});
-
 rotas.post('/', async (req: Request, res: Response) => {
   const { nome, email } = req.body;
   try {
-    const usuario = await prisma.usuario.create({
+    const locador = await prisma.locador.create({
       data: {
-        nome: nome,
-        email: email,
+        nome,
+        email,
       },
     });
-    res.json(usuario);
+    res.json(locador);
   } catch (erro) {
     res.status(400).send(erro);
   }
